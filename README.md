@@ -4,6 +4,8 @@
 
 Windows環境での使い方を記載。Macの場合は[こちら](https://note.com/littlebuddha/n/nf7325e8c16ea)参考にされると良いかもしれません。
 
+DaVinci Resolve 17 Studioで動作確認しています。
+
 ## Pythonインストール
 
 Python 3.6系を必ずインストール。3.10などでは動作しない。
