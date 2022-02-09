@@ -8,7 +8,6 @@ folder = mediapool.GetCurrentFolder()
 color = ["Orange","Blue","Apricot","Navy","Yellow","Teal","Brown","Lime","Purple","Beige","Olive","Violet","Green","Chocolate","Pink","Tan"]
 i = 0
 for clip in folder.GetClipList():
-    print(i)
     clip.SetClipColor(color[i])
     i+=1
     if len(color) < i+1:
