@@ -10,7 +10,7 @@ DaVinci Resolve 17 Studioで動作確認しています。
 
 Python 3.6系を必ずインストール。3.10などでは動作しない。
 
-Chocolateyを使用する場合
+Chocolateyを使用する場合を以下に記載するが、誤ってアップグレードすると3.6系より最新に更新されてしまうのでお勧めしない。
 
 ```powershell
 choco install -y python3 -Version 3.6.8
