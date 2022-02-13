@@ -5,8 +5,8 @@ from timecode import Timecode
 
 # ここにタイムコードとフレームレートを手打ち(笑)
 videoTc = "12:44:29:44"
-audioTc = "12:46:26:46"
-fps=60
+audioTc = "12:44:39:36"
+fps=59.94
 
 diff = Timecode(fps, audioTc) - Timecode(fps, videoTc)
 print("DiffTC",diff)
