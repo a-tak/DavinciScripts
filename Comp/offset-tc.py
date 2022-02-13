@@ -3,7 +3,7 @@ import sys
 import DaVinciResolveScript as dvr_script
 from timecode import Timecode
 
-# ここにタイムコードを手打ち(笑)
+# ここにタイムコードとフレームレートを手打ち(笑)
 videoTc = "12:44:29:44"
 audioTc = "12:46:26:46"
 fps=60
