@@ -36,19 +36,8 @@ pip install timecode
 * 動画が入っているビンに移動して実行すること
 * 同じビンにクリップメイト同じ画像が登録される
 
-### 必要モジュール
-
-#### ExifTool
-
-https://exiftool.org/
-
-Windowsの場合、ZIP解凍してファイル名をexiftool.exeにリネーム。環境変数のPATHに指定されているフォルダの何れかに移動。
-
-自分はc:\binのフォルダを作ってファイルを配置、環境変数にc:\binを追加した。
-
 ####  Pythonモジュール
 ```powershell
-pip install pyexifinfo
 pip install Pillow
 ```
 
@@ -60,10 +49,11 @@ pip install Pillow
 
 ## property-list
 
-クリップのプロパティー名を確認する為のスクリプト
+クリップのプロパティー名とメタデータ名を確認する為のスクリプト
 
 ↓結果。これが全てではない可能性はある
 
+### プロパティー
 ```
 {
   "Alpha mode": "None",
@@ -127,5 +117,39 @@ pip install Pillow
   "V-FLIP": "オフ",
   "Video Codec": "H.265 Main L6.0",
   "Super Scale": 1
+}
+```
+### メタデータ
+```
+{'Camera #': 'A',
+'Camera Aperture': 'f10.0',
+'Camera FPS': '30.000',
+'Camera Firmware': '7.3',
+'Camera ID': '07d7ff6c-2be9-40d6-b5e3-aa7b1e0cf463',
+'Camera Manufacturer': 'Blackmagic Design',
+'Camera Type': 'Blackmagic Pocket Cinema Camera 4K',
+'Clip Number': 'A071_03270652_C013',
+'Codec Bitrate': '252508080',
+'Color Space Notes': 'Blackmagic Design',
+'Compression Ratio': 'Q3',
+'Date Recorded': '2022: 03: 27',
+'Day / Night': 'day',
+'Distance': '2925mm',
+'Environment': 'exterior',
+'Focal Point (mm)': '23mm',
+'Gamma Notes': 'Blackmagic Design Film',
+'Good Take': 'false',
+'ISO': '800',
+'LUT Used': 'Blackmagic Gen 5 Film to Extended Video.cube',
+'Lens Type': 'OLYMPUS M.12-100mm F4.0',
+'ND Filter': '0',
+'Reel Number': '71',
+'Scene': '1',
+'Shot Type': 'WS',
+'Shutter': '270°',
+'Shutter Type': 'Angle',
+'Take': '13',
+'White Balance Tint': '10',
+'White Point (Kelvin)': '5600'
 }
 ```

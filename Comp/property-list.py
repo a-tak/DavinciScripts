@@ -7,3 +7,5 @@ mediapool = project.GetMediaPool()
 folder = mediapool.GetCurrentFolder()
 for clip in folder.GetClipList():
     print(clip.GetClipProperty())
+    print(clip.GetMetadata())
+    

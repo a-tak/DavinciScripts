@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import DaVinciResolveScript as dvr_script
-from pyexifinfo import information
 
 resolve = dvr_script.scriptapp("Resolve")
 projectManager = resolve.GetProjectManager()
@@ -9,12 +8,13 @@ mediapool = project.GetMediaPool()
 folder = mediapool.GetCurrentFolder()
 
 for clip in folder.GetClipList():
-    filePath = clip.GetClipProperty("File Path")
-    print(filePath)
-    meta = information(filePath)
-    # print(meta)
-    print(meta["QuickTime:CameraType"]) # カメラ
-    print(meta["QuickTime:LensType"])   # レンズ
-    print(meta["QuickTime:VideoFrameRate"]) # FPS
-
+    print(clip.GetMetadata("Camera Type"))
+    print(clip.GetMetadata("Lens Type"))
+    print(clip.GetMetadata("Camera Aperture"))
+    print(clip.GetMetadata("ISO"))
+    print(clip.GetMetadata("Shutter"))
+    print(clip.GetMetadata("Focal Point (mm)"))
+    print(clip.GetMetadata("Distance"))
+    print(clip.GetMetadata("White Balance Tint"))
+    print(clip.GetMetadata("White Point (Kelvin)"))
 
