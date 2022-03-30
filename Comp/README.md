@@ -26,6 +26,38 @@
 pip install timecode
 ```
 
+## create-metag(作成途中)
+
+動画のメタデータ情報の画像を生成する。
+現在、メタデータの取得まで。
+
+### 使い方(予定)
+
+* 動画が入っているビンに移動して実行すること
+* 同じビンにクリップメイト同じ画像が登録される
+
+### 必要モジュール
+
+#### ExifTool
+
+https://exiftool.org/
+
+Windowsの場合、ZIP解凍してファイル名をexiftool.exeにリネーム。環境変数のPATHに指定されているフォルダの何れかに移動。
+
+自分はc:\binのフォルダを作ってファイルを配置、環境変数にc:\binを追加した。
+
+####  Pythonモジュール
+```powershell
+pip install pyexifinfo
+pip install Pillow
+```
+
+### ExifInfoで取得できるメタデータサンプル
+
+```
+{'SourceFile': 'E:/DaVinci Resolve Data/2022-03-27_?_?C?ƈ??S?s?̍??`???????W/BMPCC/A071_03270652_C013.braw', 'ExifTool:ExifToolVersion': 12.4, 'ExifTool:Warning': 'FileName encoding not specified', 'File:Directory': 'E:/DaVinci Resolve Data/2022-03-27_?_?C?ƈ??S?s?̍??`???????W/BMPCC', 'File:FileAccessDate': '2022:03:30 20:35:16+09:00', 'File:FileCreateDate': '2022:03:27 06:52:53+09:00', 'File:FileModifyDate': '2022:03:27 06:52:53+09:00', 'File:FileName': 'A071_03270652_C013.braw', 'File:FilePermissions': '-rw-rw-rw-', 'File:FileSize': '393 MiB', 'File:FileType': 'MOV', 'File:FileTypeExtension': 'mov', 'File:MIMEType': 'video/quicktime', 'QuickTime:AnalogGain': 1, 'QuickTime:AnalogGainIsConstant': '(Binary data 2 bytes, use -b option to extract)', 'QuickTime:AnamorphicEnable': '(Binary data 2 bytes, use -b option to extract)', 'QuickTime:AspectRatio': '2.35:1', 'QuickTime:AudioBitsPerSample': 16, 'QuickTime:AudioChannels': 2, 'QuickTime:AudioFormat': 'in24', 'QuickTime:AudioSampleRate': 48000, 'QuickTime:Balance': 0, 'QuickTime:BitDepth': 0, 'QuickTime:BrawCodecBitrate': '(Binary data 4 bytes, use -b option to extract)', 'QuickTime:BrawCompressionRatio': 'Q3', 'QuickTime:CameraId': '07d7ff6c-2be9-40d6-b5e3-aa7b1e0cf463', 'QuickTime:CameraNumber': 'A', 'QuickTime:CameraType': 'Blackmagic Pocket Cinema Camera 4K', 'QuickTime:ClipNumber': 'A071_03270652_C013', 'QuickTime:CompressorID': 'brvo', 'QuickTime:CreateDate': '2022:03:26 21:52:53', 'QuickTime:CropOrigin': '(Binary data 8 bytes, use -b option to extract)', 'QuickTime:CropSize': '(Binary data 8 bytes, use -b option to extract)', 'QuickTime:CurrentTime': '0 s', 'QuickTime:DateRecorded': '2022:03:27', 'QuickTime:DayNight': 'day', 'QuickTime:Duration': '12.83 s', 'QuickTime:Endianness': 'Little-endian (Intel, II)', 'QuickTime:Environment': 'exterior', 'QuickTime:FirmwareVersion': 7.3, 'QuickTime:FormatFrameRate': '(Binary data 4 bytes, use -b option to extract)', 'QuickTime:GenBalance': 0, 'QuickTime:GenFlags': '0 0 0', 'QuickTime:GenGraphicsMode': 'ditherCopy', 'QuickTime:GenMediaVersion': 0, 'QuickTime:GenOpColor': '32768 32768 32768', 'QuickTime:GoodTake': False, 'QuickTime:GraphicsMode': 'ditherCopy', 'QuickTime:HandlerClass': 'Data Handler', 'QuickTime:HandlerDescription': 'Apple Alias Data Handler', 'QuickTime:HandlerType': 'Metadata Tags', 'QuickTime:HandlerVendorID': 'Apple', 'QuickTime:ImageHeight': 2176, 'QuickTime:ImageWidth': 4128, 'QuickTime:LensType': 'OLYMPUS M.12-100mm F4.0', 'QuickTime:Manufacturer': 'Blackmagic Design', 'QuickTime:MatrixStructure': '1 0 0 0 1 0 0 0 1', 'QuickTime:MediaCreateDate': '2022:03:26 21:52:53', 'QuickTime:MediaDataOffset': 16, 'QuickTime:MediaDataSize': 411652080, 'QuickTime:MediaDuration': '12.83 s', 'QuickTime:MediaHeaderVersion': 0, 'QuickTime:MediaModifyDate': '2022:03:26 21:52:53', 'QuickTime:MediaTimeScale': 30, 'QuickTime:ModifyDate': '2022:03:26 21:52:53', 'QuickTime:MovieHeaderVersion': 0, 'QuickTime:MulticardTimecode': '(Binary data 4 bytes, use -b option to extract)', 'QuickTime:MulticardVolumeCount': '(Binary data 4 bytes, use -b option to extract)', 'QuickTime:MulticardVolumeNumber': '(Binary data 4 bytes, use -b option to extract)', 'QuickTime:NextTrackID': 4, 'QuickTime:OpColor': '32768 32768 32768', 'QuickTime:OtherFormat': 'tmcd', 'QuickTime:Post_3dlutEmbeddedBmdGamma': '', 'QuickTime:Post_3dlutEmbeddedData': '(Binary data 431244 bytes, use -b option to extract)', 'QuickTime:Post_3dlutEmbeddedName': 'Blackmagic Gen 5 Film to Extended Video.cube', 'QuickTime:Post_3dlutEmbeddedSize': '(Binary data 2 bytes, use -b option to extract)', 'QuickTime:Post_3dlutEmbeddedTitle': 'Gen 5 Film to Extended Video', 'QuickTime:Post_3dlutMode': 'Disabled', 'QuickTime:PosterTime': '0 s', 'QuickTime:PreferredRate': 1, 'QuickTime:PreferredVolume': '100.00%', 'QuickTime:PreviewDuration': '0 s', 'QuickTime:PreviewTime': '0 s', 'QuickTime:PurchaseFileFormat': 'in24', 'QuickTime:ReelName': 71, 'QuickTime:Scene': 1, 'QuickTime:SelectionDuration': '0 s', 'QuickTime:SelectionTime': '0 s', 'QuickTime:ShotType': 'WS', 'QuickTime:ShutterType': 'Angle', 'QuickTime:SourceImageHeight': 2176, 'QuickTime:SourceImageWidth': 4128, 'QuickTime:Take': 13, 'QuickTime:TimeCode': 3, 'QuickTime:TimeScale': 30, 'QuickTime:ToneCurveContrast': 1, 'QuickTime:ToneCurveHighlights': 1, 'QuickTime:ToneCurveMidpoint': 0.409007728099823, 'QuickTime:ToneCurveSaturation': 1, 'QuickTime:ToneCurveShadows': 1, 'QuickTime:ToneCurveVideoBlackLevel': '(Binary data 2 bytes, use -b option to extract)', 'QuickTime:TrackCreateDate': '2022:03:26 21:52:53', 'QuickTime:TrackDuration': '12.83 s', 'QuickTime:TrackHeaderVersion': 0, 'QuickTime:TrackID': 1, 'QuickTime:TrackLayer': 0, 'QuickTime:TrackModifyDate': '2022:03:26 21:52:53', 'QuickTime:TrackVolume': '0.00%', 'QuickTime:VideoFrameRate': 30, 'QuickTime:ViewingBmdgen': '(Binary data 2 bytes, use -b option to extract)', 'QuickTime:ViewingGamma': 'Blackmagic Design Film', 'QuickTime:ViewingGamut': 'Blackmagic Design', 'QuickTime:XResolution': 72, 'QuickTime:YResolution': 72, 'Composite:AvgBitrate': '257 Mbps', 'Composite:ImageSize': '4128x2176', 'Composite:LensID': 'OLYMPUS M.12-100mm F4.0', 'Composite:Megapixels': 9.0, 'Composite:Rotation': 0}
+```
+
 ## property-list
 
 クリップのプロパティー名を確認する為のスクリプト
