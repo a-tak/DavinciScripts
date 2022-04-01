@@ -6,7 +6,8 @@ from PIL import Image, ImageDraw, ImageFont
 def makeMetaString(list):
     str = ""
     for row in list:
-        str += "{} : {}\n".format(row[0], row[1])
+        if (row[1] != ""):
+            str += "{} : {}\n".format(row[0], row[1])
 
     return str
 
@@ -21,7 +22,7 @@ for clip in folder.GetClipList():
     # パス取得
     filePath = clip.GetClipProperty("File Path")
 
-    # メタ情報取得
+    # メタ情報取得 BRAW
     meta = []
     meta.append(["Camera", clip.GetMetadata("Camera Type")])
     meta.append(["Lens", clip.GetMetadata("Lens Type")])
@@ -30,6 +31,7 @@ for clip in folder.GetClipList():
     meta.append(["Shutter Speed", clip.GetMetadata("Shutter")])
     meta.append(["Focal Point", clip.GetMetadata("Focal Point (mm)")])
     meta.append(["Distance", clip.GetMetadata("Distance")])
+    meta.append(["FPS", clip.GetClipProperty("FPS")])
     meta.append(["WB", clip.GetMetadata("White Point (Kelvin)")])
     meta.append(["Tint", clip.GetMetadata("White Balance Tint")])
 
