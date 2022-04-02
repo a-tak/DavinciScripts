@@ -76,6 +76,8 @@ pip install timecode
 
 ## create-metag(作成途中)
 
+![出力例](meta.png)
+
 動画のメタデータ情報の画像を生成する(現在BRAWのみ対応。)
 
 ### 注意事項
