@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 import DaVinciResolveScript as dvr_script
 import pathlib
+import xml.etree.ElementTree as ET
 from PIL import Image, ImageDraw, ImageFont
+from pyexifinfo import information
+
+isBraw = True
 
 def makeMetaString(list):
     str = ""
@@ -24,16 +28,24 @@ for clip in folder.GetClipList():
 
     # メタ情報取得 BRAW
     meta = []
-    meta.append(["Camera", clip.GetMetadata("Camera Type")])
-    meta.append(["Lens", clip.GetMetadata("Lens Type")])
-    meta.append(["Aperture", clip.GetMetadata("Camera Aperture")])
-    meta.append(["ISO", clip.GetMetadata("ISO")])
-    meta.append(["Shutter Speed", clip.GetMetadata("Shutter")])
-    meta.append(["Focal Point", clip.GetMetadata("Focal Point (mm)")])
-    meta.append(["Distance", clip.GetMetadata("Distance")])
-    meta.append(["FPS", clip.GetClipProperty("FPS")])
-    meta.append(["WB", clip.GetMetadata("White Point (Kelvin)")])
-    meta.append(["Tint", clip.GetMetadata("White Balance Tint")])
+    if isBraw == True:
+        meta.append(["Camera", clip.GetMetadata("Camera Type")])
+        meta.append(["Lens", clip.GetMetadata("Lens Type")])
+        meta.append(["Aperture", clip.GetMetadata("Camera Aperture")])
+        meta.append(["ISO", clip.GetMetadata("ISO")])
+        meta.append(["Shutter Speed", clip.GetMetadata("Shutter")])
+        meta.append(["Focal Point", clip.GetMetadata("Focal Point (mm)")])
+        meta.append(["Distance", clip.GetMetadata("Distance")])
+        meta.append(["FPS", clip.GetClipProperty("FPS")])
+        meta.append(["WB", clip.GetMetadata("White Point (Kelvin)")])
+        meta.append(["Tint", clip.GetMetadata("White Balance Tint")])
+    else:
+        # とりあえずGH6で読める物に対応
+        data = information(filePath)
+        meta.append(["Camera", data.get("MakerNotes:Model")])
+        xml = ET.fromstring(data.get("QuickTime:PanasonicSemi-ProMetadataXml"))
+        for item in xml.iter("ISOSensitivity"):
+            print(item.text)
 
     metaStr = makeMetaString(meta)
 
