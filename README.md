@@ -74,7 +74,7 @@ choco install -y python3 -Version 3.6.8
 pip install timecode
 ```
 
-## create-metag(作成途中)
+## create-metag
 
 ![出力例](meta.png)
 
@@ -85,7 +85,7 @@ pip install timecode
 ビン内のクリップの拡張子をpngに変更した名前でファイルを「上書き」します。
 ビン内にpngがあると上書される可能性があるので注意してください。
 
-### 使い方(予定)
+### 使い方
 
 * 動画が入っているビンに移動して実行すること
 * 画像が生成されるのでメディアプールに登録して利用する
