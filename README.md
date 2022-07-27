@@ -14,12 +14,6 @@ DaVinci Resolve 17 Studioで動作確認しています。
 
 Python 3.6系を必ずインストール。3.10などでは動作しない。
 
-Chocolateyを使用する場合を以下に記載するが、誤ってアップグレードすると3.6系より最新に更新されてしまうのでお勧めしない。
-
-```powershell
-choco install -y python3 -Version 3.6.8
-```
-
 ## 環境変数設定
 
 以下のドキュメントに沿って環境変数を指定。
@@ -31,8 +25,6 @@ choco install -y python3 -Version 3.6.8
 `%PYTHONPATH%;C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting\Modules`
 
 ## 作成したスクリプトの置き場
-
-先のドキュメントの記載に間違いがあり以下に配置する必要がある。
 
 `C:\ProgramData\Blackmagic Design\DaVinci Resolve\Fusion\Scripts\`
 
