@@ -13,6 +13,13 @@ DaVinci Resolve 17 Studioで動作確認しています。
 ## Pythonインストール
 
 Python 3.6系を必ずインストール。3.10などでは動作しない。
+なぜかGUIのインストーラーではDaVinci Resolveから認識されなくて、Chocolateyだとうまくいった。
+
+PowerShellを管理者権限で起動して以下実行。
+
+```
+choco install -y python3
+```
 
 ## 環境変数設定
 
@@ -23,6 +30,22 @@ Python 3.6系を必ずインストール。3.10などでは動作しない。
 ただし、PYTHONPATHについては絶対パスじゃない動作しなかったので以下のように設定した。
 
 `%PYTHONPATH%;C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting\Modules`
+
+つまりこれをWindowsの環境変数に入れる
+
+```
+RESOLVE_SCRIPT_API="%PROGRAMDATA%\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting"
+RESOLVE_SCRIPT_LIB="C:\Program Files\Blackmagic Design\DaVinci Resolve\fusionscript.dll"
+PYTHONPATH="%PYTHONPATH%;C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting\Modules"
+```
+
+PowerShellで以下のコマンドを入れてもよい
+
+```powershell
+[Environment]::SetEnvironmentVariable('RESOLVE_SCRIPT_API','%PROGRAMDATA%\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting', 'User')
+[Environment]::SetEnvironmentVariable('RESOLVE_SCRIPT_LIB','C:\Program Files\Blackmagic Design\DaVinci Resolve\fusionscript.dll', 'User')
+[Environment]::SetEnvironmentVariable('PYTHONPATH','%PYTHONPATH%;C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting\Modules', 'User')
+```
 
 ## 作成したスクリプトの置き場
 
@@ -85,7 +108,25 @@ pip install timecode
 ####  Pythonモジュール
 ```powershell
 pip install Pillow
+pip install pyexifinfo
 ```
+
+## gh6-create-metag
+
+試作 GH6向け create-metag
+
+#### Exiftoolインストール
+
+```powershell
+choco install exiftool
+```
+
+####  Pythonモジュール
+```powershell
+pip install Pillow
+pip install pyexifinfo
+```
+
 
 ## property-list
 
