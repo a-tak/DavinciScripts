@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import DaVinciResolveScript as dvr_script
 import pathlib
-import xml.etree.ElementTree as ET
 from PIL import Image, ImageDraw, ImageFont
 
 def makeMetaString(list):
