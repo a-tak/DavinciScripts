@@ -108,7 +108,6 @@ pip install timecode
 ####  Pythonモジュール
 ```powershell
 pip install Pillow
-pip install pyexifinfo
 ```
 
 ## gh6-create-metag
