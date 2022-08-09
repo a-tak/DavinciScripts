@@ -37,8 +37,8 @@ for clip in folder.GetClipList():
     meta.append(["FPS", clip.GetClipProperty("FPS")])
 
     xml = ET.fromstring(data.get("QuickTime:PanasonicSemi-ProMetadataXml"))
-    for item in xml.iter("WhiteBalanceColorTemperature"):
-        meta.append(["WB", item.text])
+    for item in xml.iter("{urn:schemas-Professional-Plug-in:P2:CameraMetadata:v1.2}WhiteBalanceColorTemperature"):
+        meta.append(["WB", item.text.strip()])
 
     metaStr = makeMetaString(meta)
 
