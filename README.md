@@ -113,6 +113,9 @@ pip install Pillow
 ## gh6-create-metag
 
 試作 GH6向け create-metag
+使い方は`create-metag`と同じです。
+
+Exiftoolのインストールが必要になります。
 
 #### Exiftoolインストール
 
