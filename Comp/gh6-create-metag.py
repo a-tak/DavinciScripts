@@ -59,12 +59,11 @@ for clip in folder.GetClipList():
     im.putalpha(alpha)
 
     # 動画ファイルの拡張子だけ変更した名前で画像を置く
-    savePath = pathlib.PurePath(filePath).with_suffix(".png")
-    im.save(str(savePath))
+    savePath = str(pathlib.PurePath(filePath).with_suffix(".png"))
+    im.save(savePath)
 
     # メディアプール登録
-    # mediastorage.AddItemListToMediaPool(savePath)
-    # mediastorage.AddItemsToMediaPool(savePath)
+    mediastorage.AddItemListToMediaPool(savePath)
 
 
 
