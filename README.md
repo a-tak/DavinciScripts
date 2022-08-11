@@ -4,7 +4,7 @@
 
 Windows環境での使い方を記載。Macの場合は[こちら](https://note.com/littlebuddha/n/nf7325e8c16ea)参考にされると良いかもしれません。
 
-DaVinci Resolve 17 Studioで動作確認しています。
+DaVinci Resolve 18 Studioで動作確認しています。
 
 ## 注意事項
 
@@ -12,7 +12,6 @@ DaVinci Resolve 17 Studioで動作確認しています。
 
 ## Pythonインストール
 
-Python 3.6系を必ずインストール。3.10などでは動作しない。
 なぜかGUIのインストーラーではDaVinci Resolveから認識されなくて、Chocolateyだとうまくいった。
 
 PowerShellを管理者権限で起動して以下実行。
@@ -103,7 +102,7 @@ pip install timecode
 ### 使い方
 
 * 動画が入っているビンに移動して実行すること
-* 画像が生成されるのでメディアプールに登録して利用する
+* 画像が生成されてメディアプールに自動登録されるので、手動でタイムラインにいれる
 
 ####  Pythonモジュール
 ```powershell
