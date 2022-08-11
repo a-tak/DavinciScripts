@@ -22,6 +22,10 @@ for clip in folder.GetClipList():
     # パス取得
     filePath = clip.GetClipProperty("File Path")
 
+    # brawだけを対象にする
+    if pathlib.Path(filePath).suffix.lower() != ".braw" :
+        continue
+
     # メタ情報取得 BRAW
     meta = []
     meta.append(["Camera", clip.GetMetadata("Camera Type")])
