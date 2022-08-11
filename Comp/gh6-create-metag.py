@@ -38,7 +38,7 @@ for clip in folder.GetClipList():
 
     xml = ET.fromstring(data.get("QuickTime:PanasonicSemi-ProMetadataXml"))
     for item in xml.iter("{urn:schemas-Professional-Plug-in:P2:CameraMetadata:v1.2}WhiteBalanceColorTemperature"):
-        meta.append(["WB", item.text.strip()])
+        meta.append(["WB", item.text()])
 
     metaStr = makeMetaString(meta)
 
