@@ -24,7 +24,11 @@ for clip in folder.GetClipList():
     # パス取得
     filePath = clip.GetClipProperty("File Path")
 
-    # メタ情報取得 BRAW
+    # movだけを対象にする
+    if pathlib.Path(filePath).suffix.lower() != ".mov" :
+        continue
+    
+    # メタ情報取得
     meta = []
     # とりあえずGH6で読める物に対応
     data = information(filePath)
@@ -38,7 +42,7 @@ for clip in folder.GetClipList():
 
     xml = ET.fromstring(data.get("QuickTime:PanasonicSemi-ProMetadataXml"))
     for item in xml.iter("{urn:schemas-Professional-Plug-in:P2:CameraMetadata:v1.2}WhiteBalanceColorTemperature"):
-        meta.append(["WB", item.text()])
+        meta.append(["WB", item.text])
 
     metaStr = makeMetaString(meta)
 
