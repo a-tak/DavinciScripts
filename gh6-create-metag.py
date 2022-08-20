@@ -30,7 +30,6 @@ for clip in folder.GetClipList():
     
     # メタ情報取得
     meta = []
-    # とりあえずGH6で読める物に対応
     data = information(filePath)
     meta.append(["Camera", data.get("EXIF:Model")])
     meta.append(["Lens", data.get("Composite:LensID")])
@@ -38,8 +37,10 @@ for clip in folder.GetClipList():
     meta.append(["ISO", data.get("EXIF:ISO")])
     meta.append(["Shutter Speed", data.get("Composite:ShutterSpeed")])
     meta.append(["Focal Point", data.get("Composite:FocalLength35efl")])
+    meta.append(["Distance", data.get("Composite:HyperfocalDistance")])
     meta.append(["FPS", clip.GetClipProperty("FPS")])
-
+    
+    # ホワイトバランスだけはXMLから取得
     xml = ET.fromstring(data.get("QuickTime:PanasonicSemi-ProMetadataXml"))
     for item in xml.iter("{urn:schemas-Professional-Plug-in:P2:CameraMetadata:v1.2}WhiteBalanceColorTemperature"):
         meta.append(["WB", item.text])
