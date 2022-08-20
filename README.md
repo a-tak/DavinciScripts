@@ -48,9 +48,9 @@ PowerShellで以下のコマンドを入れてもよい
 
 ## 作成したスクリプトの置き場
 
-`C:\ProgramData\Blackmagic Design\DaVinci Resolve\Fusion\Scripts\`
+`C:\ProgramData\Blackmagic Design\DaVinci Resolve\Fusion\Scripts\Comp`
 または
-`%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Scripts\`
+`%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Scripts\Comp`
 
 ## 環境設定の変更
 
